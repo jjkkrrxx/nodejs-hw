@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
+import PinoHttp from 'pino-http';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { errors as celebrateErrors } from 'celebrate';
@@ -14,8 +15,21 @@ import userRoutes from './routes/userRoutes.js';
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
-await connectMongoDB();
+app.use(express.json());
 
+const logger = PinoHttp({
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true,
+      translateTime: 'HH:MM:ss',
+      ignore: 'pid,hostname',
+      messageFormat:
+        '{req.method} {req.url} {res.statusCode} - {responseTime}ms',
+      hideObject: true,
+    },
+  },
+});
 app.use(logger);
 app.use(express.json());
 app.use(
