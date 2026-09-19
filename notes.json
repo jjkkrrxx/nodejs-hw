@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Team standup",
+    "content": "Discuss weekly goals and blockers",
+    "tag": "Meeting"
+  },
+  {
+    "title": "Buy groceries",
+    "content": "Milk, eggs, bread, apples",
+    "tag": "Shopping"
+  },
+  {
+    "title": "Trip ideas",
+    "content": "Consider visiting the mountains next month",
+    "tag": "Travel"
+  },
+  {
+    "title": "Budget review",
+    "content": "Check monthly expenses and savings",
+    "tag": "Finance"
+  },
+  {
+    "title": "Morning run",
+    "content": "Jog for 30 minutes in the park",
+    "tag": "Health"
+  }
+]
